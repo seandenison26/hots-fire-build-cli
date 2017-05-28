@@ -13,8 +13,6 @@ class HotsFireBuild::CLIController
 					view = gets.chomp
 					if view.to_i > 0 && view.to_i <= hero.builds.size
 						view = hero.builds[view - 1]
-					elsif view != String
-						view = hero
 					end	
 				when Build
 					puts build_levels(view)
@@ -28,10 +26,6 @@ class HotsFireBuild::CLIController
 					view = gets.chomp
 				when String
 					view = Hero.find_or_create_by_name(view)
-					if view.is_a?(Error)
-						puts Error.message
-						view = "hero search"
-					end	
 				else
 					puts "I'm sorry, that made no sense to me."
 					view = gets.chomp
@@ -55,7 +49,10 @@ class HotsFireBuild::CLIController
 
 		#Returns a formatted string of the heroes data.
 	def hero_data(hero)
-		#returns hero data string
+		name = hero.name.capitalize
+		hereStr = 	"\n#{name}, the #{hero.title}\n" +
+				"Role: #{hero.role}\n" +
+				"Franchise: #{hero.franchise}\n"
 	end
 	
 		#Returns a formatted list of the hero's top rated builds.
