@@ -1,4 +1,4 @@
-class HotsFireBuild::CLIController
+class HotsFireBuild::CLI
 		#Begins the application loop.
 	def call
 		welcome

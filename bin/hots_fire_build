@@ -2,5 +2,5 @@
 
 require_relative '../lib/hots-fire-build'
 
-HotsFireBuild::CLIController.new.call
+HotsFireBuild::CLI.new.call
 
