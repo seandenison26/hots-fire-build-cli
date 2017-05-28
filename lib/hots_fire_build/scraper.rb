@@ -9,7 +9,7 @@ class Scraper
 		begin
 			home = Nokogiri::HTML(open("http://www.heroesfire.com/hots/wiki/heroes/#{name.downcase}"))
 		rescue	
-			puts "Shit Fucked Up Fam"
+			raise NoHeroName
 		else	
 			arr = home.css(".hero-stats").text.gsub("\t","").split(/\n+/)
 			data = {
