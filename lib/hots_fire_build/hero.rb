@@ -7,8 +7,8 @@ class Hero
 		hero_hash.each { |k,v|
 			self.send("#{k}=", v)
 		}	
-		@builds = get_builds
-		@abilities = get_abilities
+		@builds = []
+		@abilities = []
 		save
 	end
 
