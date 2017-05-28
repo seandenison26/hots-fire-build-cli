@@ -1,5 +1,5 @@
 class HotsFireBuild::CLIController
-	#Begins the application loop.
+		#Begins the application loop.
 	def call
 		welcome
 		view = gets.chomp
@@ -39,7 +39,7 @@ class HotsFireBuild::CLIController
 		end
 	end
 	
-	#Puts out a welcome message to the user, explaining initial commans, initializes view variable with user input. 
+		#Puts out a welcome message to the user, explaining initial commans, initializes view variable with user input. 
 	def welcome
 		puts "Welcome to Hots-Fire-Builder, powered by www.heroesfire.com!" 
 		puts "What would you like to do? Find a Hero by name or see a list of all Heroes?"
@@ -47,20 +47,23 @@ class HotsFireBuild::CLIController
 		puts "Enter \"free\" to see a list of free heroes or the name of the Hero you wish to search for:"
 	end
 
+		#Returns a list of the current free to play heroes.
 	def free_list
-		#heroes = Scraper.get_free_hero_list
-		heroes = ["D.Va", "Lucio", "Varian", "Naazeebo"]
-		list = heroes.join("\n")
+	        heroes = Scraper.get_free_hero_list
+		list = "The current free heroes are:\n#{heroes.join("\n")}"
 	end
 
+		#Returns a formatted string of the heroes data.
 	def hero_data(hero)
 		#returns hero data string
 	end
-
+	
+		#Returns a formatted list of the hero's top rated builds.
 	def build_list(hero)
 		builds = hero.builds.map{|build| "#{hero.builds.index(build) + 1}. #{build}"}.join("\n")
 	end
 
+		#Returns a formatted list of the build's levels.
 	def build_levels(build)
 		build.get_levels	
 		levels = "#{build.name}\n" + build.levels.reduce("") {|str,(k,v)| str + "#{k.to_s}: {v}\n"} 
