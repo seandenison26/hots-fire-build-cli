@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/hots-fire-build'
+
+HotsFireBuild::CLIController.new.call
+
