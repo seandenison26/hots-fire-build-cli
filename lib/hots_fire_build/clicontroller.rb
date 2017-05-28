@@ -27,7 +27,7 @@ class HotsFireBuild::CLIController
 					puts "What Hero would you like to see?"
 					view = gets.chomp
 				when String
-					view = Hero.find_or_create_hero(view)
+					view = Hero.find_or_create_by_name(view)
 					if view.is_a?(Error)
 						puts Error.message
 						view = "hero search"

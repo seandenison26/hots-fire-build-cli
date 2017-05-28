@@ -3,5 +3,7 @@
 
 require_relative '../lib/hots-fire-build'
 
-info = Scraper.get_free_hero_list
-puts info
+test = {:name => "varian", :title =>"High King of the Alliance", :role => "Melee Multiclass", :franchise => "Warcraft"} 
+hero = Hero.new(test)
+puts hero.name.capitalize
+puts hero.title
