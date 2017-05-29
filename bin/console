@@ -3,4 +3,5 @@
 
 require_relative '../lib/hots-fire-build'
 
-list = Scraper.get_build_links("varian")
+list = Scraper.get_build_data_from_link("http://www.heroesfire.com/hots/guide/ocms-varian-12876")
+

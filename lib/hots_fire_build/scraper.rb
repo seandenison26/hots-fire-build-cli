@@ -27,8 +27,9 @@ class Scraper
 	end
 	
 	
-	def self.get_build_data
-		home = Nokogiri::HTML(open("http://www.heroesfire.com/hots/wiki/heroes/#{name}"))
+	def self.get_build_data_from_link(link)
+		home = Nokogiri::HTML(open("http://www.heroesfire.com#{link}"))
+		binding.pry
 
 	end
 		#Returns an abilities hash based on a given name
