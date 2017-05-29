@@ -12,7 +12,7 @@ class HotsFireBuild::CLI
 					puts "Enter the number of a build to see that build or type \"hero search\" to search for a new hero"
 					view = gets.chomp
 					if view.to_i > 0 && view.to_i <= hero.builds.size
-						view = hero.builds[view - 1]
+						view = hero.builds[view.to_i - 1]
 					end	
 				when Build
 					puts build_levels(view)
@@ -57,13 +57,17 @@ class HotsFireBuild::CLI
 	
 		#Returns a formatted list of the hero's top rated builds.
 	def build_list(hero)
-		builds = hero.builds.map{|build| "#{hero.builds.index(build) + 1}. #{build}"}.join("\n")
+		#This Line is just to limit the initial amount of builds shown. Possibly implement a way to search further.
+		builds = hero.builds
+		if builds.size >= 5
+			builds = builds.slice(0,5)
+		end
+		list = builds.map{|build| "#{hero.builds.index(build) + 1}. #{build.name} #{build.votes}"}.join("\n")
 	end
 
 		#Returns a formatted list of the build's levels.
 	def build_levels(build)
-		build.get_levels	
-		levels = "#{build.name}\n" + build.levels.reduce("") {|str,(k,v)| str + "#{k.to_s}: {v}\n"} 
+		levels = "#{build.name}\n" + build.lvls.reduce("") {|str,(k,v)| str + "#{k.to_s}: #{v}\n"} 
 	end 	
 end
 
