@@ -31,11 +31,20 @@ class Scraper
 		home = Nokogiri::HTML(open("http://www.heroesfire.com#{link}"))
 		#Dev note: This array currently return the skills names of a particular builds variants. Good to know if we wish to add that functionality.
 		levels = home.css("div.skills img") .map{|link| link.attr("src").slice(/[\w-]+.png/).split(".png")[0].split("-").map(&:capitalize).join(" ")}
+		lvls = levels.slice(0,7)
 		data = {
 			:name => home.css("div.desc h2").first.text,
 			:link => link,
 			:votes => home.css("div.rank").first.text,
-			:lvls => levels.slice(0,7) 
+			:lvls => {
+				:Level1 => lvls[0],
+				:Level4 => lvls[1],
+				:Level7 => lvls[2],
+				:Level10 => lvls[3],
+				:Level13 => lvls[4],
+				:Level16 => lvls[5],
+				:Level20 => lvls[6],
+			}	
 		}
 	end
 		#Returns an abilities hash based on a given name
