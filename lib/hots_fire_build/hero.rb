@@ -1,13 +1,12 @@
 class Hero
+	include Concerns::InstanceMethods
 	attr_accessor :name, :title, :role, :franchise, :builds, :abilities
 
 	@@all = []
 
 		#initializes a hero with a hero hash and build and abilities arrays
 	def initialize(hero_hash) 
-		hero_hash.each { |k,v|
-			self.send("#{k}=", v)
-		}	
+		super
 		@builds = []
 		@abilities = []
 	end
@@ -24,11 +23,16 @@ class Hero
 		end
 	end
 
-
+		#Persists the hero in @@all
 	def save
 		@@all << self
 	end
 	
+	def add_build(build)
+		@builds << build
+		build.hero = self unless build.hero == self
+	end
+
 		#Searches the all array for a Hero by a given name
 	def self.find_by_name(name)
 		@@all.find {|hero| hero.name == name}
