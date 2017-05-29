@@ -3,5 +3,13 @@
 
 require_relative '../lib/hots-fire-build'
 
-list = Scraper.get_build_data_from_link("http://www.heroesfire.com/hots/guide/ocms-varian-12876")
+hash = Scraper.get_build_data_from_link("/hots/guide/ocms-varian-12876")
+
+build = Build.new(hash)
+
+puts build.name
+puts build.votes
+puts build.lvls
+
+
 

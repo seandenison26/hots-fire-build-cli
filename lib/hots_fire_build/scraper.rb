@@ -26,11 +26,17 @@ class Scraper
 		links = home.css("div.browse-item-list.browse-table a").find_all{|link| link.attr("style") != "display:none"}
 	end
 	
-	
+		#Returns a build data hash from a given link	
 	def self.get_build_data_from_link(link)
 		home = Nokogiri::HTML(open("http://www.heroesfire.com#{link}"))
-		binding.pry
-
+		#Dev note: This array currently return the skills names of a particular builds variants. Good to know if we wish to add that functionality.
+		levels = home.css("div.skills img") .map{|link| link.attr("src").slice(/[\w-]+.png/).split(".png")[0].split("-").map(&:capitalize).join(" ")}
+		data = {
+			:name => home.css("div.desc h2").first.text,
+			:link => link,
+			:votes => home.css("div.rank").first.text,
+			:lvls => levels.slice(0,7) 
+		}
 	end
 		#Returns an abilities hash based on a given name
 	def self.get_abilities_data

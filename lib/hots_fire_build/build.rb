@@ -1,7 +1,8 @@
 class Build
+	include Concerns::InstanceMethods
 	attr_accessor :name, :votes, :link, :lvls
 	attr_reader :hero
-
+	
 	def initialize(build_hash)
 		super
 	end 
