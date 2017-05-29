@@ -21,6 +21,12 @@ class Scraper
 		end	
 	end
 		#Returns an array of build hashes based on a given name
+	def self.get_build_links(name)
+		home = Nokogiri::HTML(open("http://www.heroesfire.com/hots/wiki/heroes/#{name}/guides"))
+		links = home.css("div.browse-item-list.browse-table a").find_all{|link| link.attr("style") != "display:none"}
+	end
+	
+	
 	def self.get_build_data
 		home = Nokogiri::HTML(open("http://www.heroesfire.com/hots/wiki/heroes/#{name}"))
 
