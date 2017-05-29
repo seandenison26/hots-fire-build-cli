@@ -3,6 +3,7 @@ class HotsFireBuild::CLI
 	def call
 		welcome
 		view = gets.chomp
+		puts "\n"
 		while view != "exit" do
 			case view
 				when Hero
@@ -15,9 +16,13 @@ class HotsFireBuild::CLI
 						view = hero.builds[view.to_i - 1]
 					end	
 				when Build
+					build = view.dup.freeze
 					puts build_levels(view)
-					puts "If you would like to go back and see other hero buils type \"go back\". To search another hero type \"hero search\"."
+					puts "If you would like to go back and see other hero builds type \"go back\". To search another hero type \"hero search\"."
 					view = gets.chomp
+					if view == "go back"
+						view = build.hero.name
+					end
 				when "free"
 					puts free_list
 					view = "hero search"		
@@ -29,14 +34,14 @@ class HotsFireBuild::CLI
 				else
 					puts "I'm sorry, that made no sense to me."
 					view = gets.chomp
-			end	
+			end
+			puts "\n"	
 		end
 	end
 	
 		#Puts out a welcome message to the user, explaining initial commans, initializes view variable with user input. 
 	def welcome
 		puts "Welcome to Hots-Fire-Builder, powered by www.heroesfire.com!" 
-		puts "What would you like to do? Find a Hero by name or see a list of all Heroes?"
 		puts "Type \"exit\" at any point to exit the application."
 		puts "Enter \"free\" to see a list of free heroes or the name of the Hero you wish to search for:"
 	end
@@ -57,8 +62,8 @@ class HotsFireBuild::CLI
 	
 		#Returns a formatted list of the hero's top rated builds.
 	def build_list(hero)
-		#This Line is just to limit the initial amount of builds shown. Possibly implement a way to search further.
 		builds = hero.builds
+		#This Line is just to limit the initial amount of builds shown. Possibly implement a way to search further.
 		if builds.size >= 5
 			builds = builds.slice(0,5)
 		end
