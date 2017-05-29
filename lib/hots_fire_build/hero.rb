@@ -50,6 +50,7 @@ class Hero
 				puts "No Hero was found by that name. Please recheck your spelling or formatting."
 				return "hero search"
 			else
+				Build.create_builds_from_hero(hero)
 				hero
 			end		
 		end

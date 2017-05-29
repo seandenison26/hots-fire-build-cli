@@ -19,4 +19,14 @@ class Build
 		build.save
 		build
 	end
+
+	def self.create_builds_from_hero(hero)
+		links = Scraper.get_build_links(hero.name)
+		links.each { |link|
+			build = Build.create(Scraper.get_build_data_from_link(link))
+			build.hero = hero
+			build
+		}
+	
+	end
 end

@@ -7,9 +7,14 @@ hash = Scraper.get_build_data_from_link("/hots/guide/ocms-varian-12876")
 
 build = Build.new(hash)
 
-puts build.name
-puts build.votes
-puts build.lvls
-
+input = ""
+while input != "exit"
+	input = gets.chomp
+	links = Scraper.get_build_links(input)
+	data = Scraper.get_build_data_from_link(links.first)
+	puts ""
+	puts data
+	puts ""
+end
 
 
