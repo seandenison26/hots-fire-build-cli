@@ -1,9 +1,13 @@
 class Hero
 	include Concerns::InstanceMethods
+	extend Concerns::ClassMethods
 	attr_accessor :name, :title, :role, :franchise, :builds, :abilities
 
 	@@all = []
 
+	def self.all
+		@@all
+	end
 		#initializes a hero with a hero hash and build and abilities arrays
 	def initialize(hero_hash) 
 		super
@@ -23,11 +27,6 @@ class Hero
 		end
 	end
 
-		#Persists the hero in @@all
-	def save
-		@@all << self
-	end
-	
 	def add_build(build)
 		@builds << build
 		build.hero = self unless build.hero == self

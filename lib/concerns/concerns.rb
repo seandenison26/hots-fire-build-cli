@@ -9,13 +9,12 @@ module Concerns
 		end	
 	
 		def save
-			@@all << self
+			self.class.all << self
 		end
 
 	end
 
 	module ClassMethods
-
 	end
 
 end

@@ -1,10 +1,14 @@
 class Build
 	include Concerns::InstanceMethods
+	extend Concerns::ClassMethods
 	attr_accessor :name, :votes, :link, :lvls
 	attr_reader :hero
 	
 	@@all = [] 
-
+	def self.all
+		@@all
+	end
+	
 	def initialize(build_hash)
 		super
 	end 

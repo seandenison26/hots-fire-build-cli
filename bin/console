@@ -10,10 +10,10 @@ build = Build.new(hash)
 input = ""
 while input != "exit"
 	input = gets.chomp
-	links = Scraper.get_build_links(input)
-	data = Scraper.get_build_data_from_link(links.first)
+	hero = Hero.find_or_create_by_name(input)
 	puts ""
-	puts data
+	puts hero.name.capitalize
+	puts hero.builds
 	puts ""
 end
 
