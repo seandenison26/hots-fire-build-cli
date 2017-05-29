@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "./lib/hots_fire_build.rb"
+require "hots_fire_build/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "hots-fire-build"

@@ -26,7 +26,7 @@ class Build
 			build.save
 		}
 	end
-		
+		#Creates builds from a given hero and assigns them to that hero
 	def self.create_builds_from_hero(hero)
 		links = Scraper.get_build_links(hero.name)
 		links.each { |link|
