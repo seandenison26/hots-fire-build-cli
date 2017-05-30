@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome to Hots-Fire-Build a ruby CLI for accessing hero and build information for Blizzard's Heroes of the Storm. This is an object orientated Ruby scraper powered by Nokogiri and www.heroesfire.com.The current version will display a list of free heroes, individual hero information, the top five builds for each hero, and the talent order for each of the builds. 
+Welcome to Hots-Fire-Build a ruby CLI for accessing hero and build information for Blizzard's Heroes of the Storm. This is an object orientated Ruby scraper powered by Nokogiri and www.heroesfire.com. The current version displays a list of free heroes, individual hero information, the top five builds for each hero, and the talent order for each of the builds. 
 
 
 ## Installation
