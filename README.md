@@ -8,20 +8,16 @@ Welcome to Hots-Fire-Build a ruby CLI for accessing hero and build information f
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'hots-fire-build'
+gem 'hots-fire-build', :git => git://github.com/seandenison26/hots-fire-build-cli
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install hots-fire-build
-
 ## Usage
 
-
+CLI
 
 ## Development
 

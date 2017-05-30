@@ -23,6 +23,9 @@ class HotsFireBuild::CLI
 					if view == "go back"
 						view = build.hero.name
 					end
+				when "help"
+					help
+					view = gets.chomp
 				when "free"
 					puts free_list
 					view = "hero search"		
@@ -41,9 +44,19 @@ class HotsFireBuild::CLI
 	
 		#Puts out a welcome message to the user, explaining initial commans, initializes view variable with user input. 
 	def welcome
-		puts "Welcome to Hots-Fire-Builder, powered by www.heroesfire.com!" 
+		puts "\nWelcome to Hots-Fire-Builder, powered by www.heroesfire.com!" 
 		puts "Type \"exit\" at any point to exit the application."
-		puts "Enter \"free\" to see a list of free heroes or the name of the Hero you wish to search for:"
+		puts "Enter \"help\" to see an explanation of the different commands or enter the name of the Hero you wish to search for:"
+	end
+		
+		#Puts out a series of strings that explain the results of different user inputs.	
+	def help
+		puts "The CLI currently accepts the following commands:"
+		puts "'help' - Displays the current help screen."
+		puts "'free' - Displays a list of the current free-to-play heroes."
+		puts "'<hero name>' - Will search for a hero of that name. No punctuation should be added and spaces should be represented with '-'"
+		puts "'hero search' - Will return the user to the hero search prompt."
+		puts "'exit' - Closes the application."
 	end
 
 		#Returns a list of the current free to play heroes.
