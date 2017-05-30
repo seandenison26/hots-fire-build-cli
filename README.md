@@ -19,7 +19,9 @@ And then execute:
 
 ## Usage
 
-Hots-fire-build can be accessed by typing `ruby bin\hots_fire_build` in the terminal from the root directory. 
+Hots-fire-build can be accessed by typing `ruby bin\hots_fire_build` in the terminal from the root directory.
+
+[Video Walkthrough](https://www.youtube.com/watch?v=XnpwPmddTNw&lc=z12ghd5ginmwcxtjv04cclmojpvpidnw1s40k) 
 
 ## Contributing
 
