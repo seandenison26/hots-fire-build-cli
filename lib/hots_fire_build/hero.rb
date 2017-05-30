@@ -4,7 +4,8 @@ class Hero
 	attr_accessor :name, :title, :role, :franchise, :builds, :abilities
 
 	@@all = []
-
+	
+		#Returns the collection of all heroes
 	def self.all
 		@@all
 	end
@@ -26,7 +27,7 @@ class Hero
 			hero	
 		end
 	end
-
+		#Add build to the builds array and sets the build's hero as self
 	def add_build(build)
 		@builds << build
 		build.hero = self unless build.hero == self

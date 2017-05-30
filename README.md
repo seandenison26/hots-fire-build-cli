@@ -1,9 +1,7 @@
 # Hots::Fire::Build
 
+Welcome to Hots-Fire-Build a ruby CLI for accessing hero and build information for Blizzard's Heroes of the Storm. 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hots/fire/build`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -23,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 
@@ -41,4 +39,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Code of Conduct
 
-Everyone interacting in the Hots::Fire::Bui;d project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/hots-fire-build/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Hots::Fire::Build project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/hots-fire-build/blob/master/CODE_OF_CONDUCT.md).

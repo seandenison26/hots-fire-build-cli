@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Heroes of the Strom Hero Build Scraper"
   spec.description   = "CLI that scrapes hero and build information for Heroes of the Storm. Powered by Nokogiri and heroesfire.com."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/seandenison26/hots-fire-build-cli"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

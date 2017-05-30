@@ -7,7 +7,7 @@ module Concerns
 				self.send("#{k}=", v)
 			}
 		end	
-	
+			#Persists the object instance in the class's all variable 	
 		def save
 			self.class.all << self
 		end
